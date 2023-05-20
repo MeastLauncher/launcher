@@ -1,0 +1,11 @@
+{
+  "name": "@meast/themes",
+  "version": "1.0.0",
+  "description": "",
+  "exports": {
+    ".": "./default/app.scss"
+  },
+  "keywords": [],
+  "author": "Command_maker",
+  "license": "ISC"
+}
