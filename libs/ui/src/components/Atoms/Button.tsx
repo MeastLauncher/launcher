@@ -7,7 +7,7 @@ import React from 'react';
 export const Button = ({name, label, state = 'default', disabled = false, icon, title}: ButtonProps): React.ReactElement => {
     return <button
         name={name} className={state}
-        disabled={disabled === 'true' || disabled === true}
+        disabled={disabled}
         title={title}
     >
             {icon ? <i className={icon}></i> : null} {label}

@@ -29,8 +29,7 @@ const config: StorybookConfig = {
         check: false,
         checkOptions: {},
         reactDocgenTypescriptOptions: {
-            shouldExtractValuesFromUnion: true,
-            savePropValueAsString: false
+            shouldExtractLiteralValuesFromEnum: true,
         },
     },
     docs: {

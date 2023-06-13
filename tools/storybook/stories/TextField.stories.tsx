@@ -51,7 +51,7 @@ export const Disabled: Story = {
         placeholder: 'Input placeholder',
         inputType: 'text',
         state: 'default',
-        disabled: 'true' as boolean,
+        disabled: true,
         onChange: e => console.log(e.target.value),
     } satisfies TextFieldProps
 }

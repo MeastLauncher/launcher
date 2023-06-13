@@ -40,7 +40,7 @@ export const Disabled: Story = {
     args: {
         name: 'button',
         label: 'A disabled button',
-        disabled: 'true' as boolean,
+        disabled: true,
         title: 'A disabled button',
     } satisfies ButtonProps
 }
