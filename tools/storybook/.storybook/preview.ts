@@ -1,6 +1,8 @@
 import '@meast/themes';
 
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react';
+import { themes } from '@storybook/theming';
+import { withConsole } from '@storybook/addon-console';
 
 const preview: Preview = {
   parameters: {
@@ -11,7 +13,11 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    docs: {
+      theme: themes.dark
+    }
   },
+  decorators: [(storyFn, context) => withConsole()(storyFn)(context)]
 };
 
 export default preview;

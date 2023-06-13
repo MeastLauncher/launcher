@@ -55,5 +55,6 @@ button {
   & i {
     font-size: var(--size);
     margin-right: calc(var(--size) * .3);
+    color: var(--button-text);
   }
 }

@@ -1,0 +1,82 @@
+/**
+ * This is the default style for the TextField component
+ * See the `TextField` component in the ui package
+ */
+.text-field-control {
+  width: 100%;
+  position: relative;
+  margin: calc(var(--size) * .75) 0;
+}
+
+.text-field-control .input {
+  width: 100%;
+  height: calc(var(--size) * 2.8);
+  background: var(--background);
+  color: var(--text);
+  border: 1px solid var(--stroke);
+  border-radius: calc(var(--size) * .75);
+  box-shadow: 0 0 4px 2px var(--input-shadow);
+  outline: none;
+  padding-left: calc(var(--size) * 1.2);
+  padding-right: calc(var(--size) * 1.2);
+  transition: .2s ease-in-out;
+}
+
+// On focus
+//===============
+.text-field-control .input:focus {
+  box-shadow: 0 0 4px 4px var(--input-shadow);
+}
+
+// Disabled text field
+//===============
+.text-field-control.disabled {
+  user-select: none;
+  cursor: not-allowed;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: calc(var(--size) * .75);
+    background: var(--input-disabled);
+  }
+}
+
+// Icon design
+//===============
+// Paddings on input
+.text-field-control .input.with-icon-left {
+  padding-left: calc(var(--size) * 2.5);
+}
+
+.text-field-control .input.with-icon-left {
+  padding-right: calc(var(--size) * 2.5);
+}
+
+// Left
+.text-field-control i {
+  color: var(--state-color);
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: calc(var(--size) * .75);
+}
+
+.text-field-control i.default-color {
+  @extend %default-state-color;
+}
+
+// Right
+.text-field-control .icon-right {
+  right: var(--size);
+}
+
+// Label design
+//===============
+.text-field-control label.label {
+  font-weight: 500;
+  margin-bottom: var(--size);
+  display: inline-block;
+}

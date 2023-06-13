@@ -98,6 +98,7 @@ video {
   border: 0;
   font-size: var(--size);
   font-family: var(--primary-font-family);
+  color: var(--text);
   vertical-align: baseline;
 }
 
@@ -171,7 +172,6 @@ blockquote:after,
 q:before,
 q:after {
   content: '';
-  content: none;
 }
 
 table {

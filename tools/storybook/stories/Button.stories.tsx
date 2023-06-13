@@ -14,6 +14,7 @@ export const Primary: Story = {
     args: {
         name: 'button',
         label: 'A button',
+        title: 'A simple button',
     } satisfies ButtonProps
 }
 
@@ -21,7 +22,8 @@ export const Success: Story = {
     args: {
         name: 'button',
         label: 'A success button',
-        state: 'success'
+        state: 'success',
+        title: 'A success button',
     } satisfies ButtonProps
 }
 
@@ -29,7 +31,8 @@ export const Error: Story = {
     args: {
         name: 'button',
         label: 'An error button',
-        state: 'error'
+        state: 'error',
+        title: 'An error button',
     } satisfies ButtonProps
 }
 
@@ -37,7 +40,8 @@ export const Disabled: Story = {
     args: {
         name: 'button',
         label: 'A disabled button',
-        disabled: 'true' as boolean
+        disabled: 'true' as boolean,
+        title: 'A disabled button',
     } satisfies ButtonProps
 }
 
@@ -45,6 +49,7 @@ export const WithIcon: Story = {
     args: {
         name: 'button',
         label: 'A button with icon',
-        icon: 'fa-solid fa-house'
+        icon: 'fa-solid fa-house',
+        title: 'A button with icon',
     } satisfies ButtonProps
 }
