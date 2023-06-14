@@ -4,7 +4,6 @@ import { TextField, type TextFieldProps } from '@meast/ui';
 const meta = {
     title: 'Atoms/TextField',
     component: TextField,
-    tags: ['autodocs']
 } satisfies Meta<typeof TextField>;
 
 export default meta;

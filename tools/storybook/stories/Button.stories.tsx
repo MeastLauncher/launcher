@@ -4,7 +4,6 @@ import { Button, ButtonProps } from '@meast/ui';
 const meta = {
     title: 'Atoms/Button',
     component: Button,
-    tags: ['autodocs']
 } satisfies Meta<typeof Button>
 
 export default meta;
