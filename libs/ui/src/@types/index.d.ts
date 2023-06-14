@@ -4,10 +4,16 @@ export = MeastUI;
 export as namespace MeastUI;
 
 declare namespace MeastUI {
+    /**
+     * Represents the state of an input (it changes its color)
+     */
     type MeastInputState = 'default' | 'success' | 'error';
 
     type TextFieldType = 'email' | 'password' | 'number' | 'text' | 'url';
 
+    /**
+     * Props of the button component
+     */
     type ButtonProps = {
         /**
          * The state of the button. It defines its type and color
@@ -32,12 +38,15 @@ declare namespace MeastUI {
         /**
          * HTML `title` attribute for the button
          */
-        title: string;
+        title: string
     }
 
+    /**
+     * Props of the TextField component
+     */
     type TextFieldProps = {
         /**
-         * The name of the text field (bound to the `name` property of the button). It is also used for `id` property. Set a unique name for each text field
+         * The name of the text field (bound to the `name` property of the field). It is also used for `id` property. Set a unique name for each text field
          */
         name: string,
         /**
@@ -83,11 +92,46 @@ declare namespace MeastUI {
         /**
          * HTML `title` attribute for the field
          */
-        title: string;
+        title: string,
         /**
          * Function fired when the content if the field changes
          */
-        onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+        onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    }
+
+    /**
+     * Props of the checkbox component
+     */
+    type CheckboxProps = {
+        /**
+         * The label displayed beside the checkbox
+         */
+        label: string,
+
+        /**
+         * The event fired when the user clicks on the checkbox
+         */
+        onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+        /**
+         * The name of the checkbox (bound to the `name` property of the checkbox). It is also used for `id` property. Set a unique name for each checkbox
+         */
+        name: string,
+        /**
+         * If the checkbox is disabled
+         */
+        disabled?: boolean
+        /**
+         * The state of the checkbox. It changes its color
+         */
+        state?: MeastInputState,
+        /**
+         * The title of the checkbox (bound to the `title` HTML property)
+         */
+        title?: string,
+        /**
+         * If the checkbox is checked by default
+         */
+        checked?: boolean
     }
 
     /**
@@ -99,4 +143,9 @@ declare namespace MeastUI {
      * This is the default TextField
      */
     const TextField: (props: TextFieldProps) => React.ReactElement;
+
+    /**
+     * This is the default checkbox
+     */
+    const Checkbox: (props: CheckboxProps) => React.ReactElement;
 }
