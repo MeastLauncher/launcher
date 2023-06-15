@@ -113,7 +113,7 @@ declare namespace MeastUI {
          */
         onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
         /**
-         * The name of the checkbox (bound to the `name` property of the checkbox). It is also used for `id` property. Set a unique name for each checkbox
+         * The name of the checkbox (bound to the `name` property of the checkbox). It is also used for `id` property (not on RadioButton). Set a unique name for each checkbox
          */
         name: string,
         /**
@@ -132,6 +132,13 @@ declare namespace MeastUI {
          * If the checkbox is checked by default
          */
         checked?: boolean
+    }
+
+    type RadioButtonProps = CheckboxProps & {
+        /**
+         * The HTML id of the radio button
+         */
+        id?: string,
     }
 
     /**
@@ -158,4 +165,9 @@ declare namespace MeastUI {
      * A checkbox like a switch (another design)
      */
     const Switch: (props: CheckboxProps) => React.ReactElement;
+
+    /**
+     * This is the default radio button
+     */
+    const RadioButton: (props: RadioButtonProps) => React.ReactElement;
 }

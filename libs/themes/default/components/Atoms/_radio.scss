@@ -1,0 +1,53 @@
+/**
+ * This is the default style for the RadioButton component
+ * See the `RadioButton` component in the ui package
+ */
+.radio-container {
+  @extend .checkbox-container;
+}
+
+.radio-container .radio-ui {
+  position: relative;
+
+  width: calc(var(--size) * 1.5);
+  height: calc(var(--size) * 1.5);
+
+  border-radius: 50%;
+  border: calc(var(--size) * .25) solid var(--state-color);
+}
+
+//Checked design
+.radio-container .radio-ui::before {
+  content: '';
+
+  display: block;
+  width: 0;
+  height: 0;
+
+  border-radius: 50%;
+  background: var(--state-color);
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: .1s ease-in-out;
+}
+
+.radio-container input:checked + .radio-ui::before {
+  width: calc(var(--size) * .75);
+  height: calc(var(--size) *.75);
+}
+
+//Disabled design
+.radio-container.radio-disabled {
+  cursor: not-allowed;
+}
+
+.radio-container.radio-disabled .radio-ui {
+  background: var(--input-disabled-2);
+}
+
+.radio-container .radio-ui.default-color {
+  --state-color: var(--primary);
+}
