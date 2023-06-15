@@ -153,4 +153,9 @@ declare namespace MeastUI {
      * A checkbox with a tick mark (another design)
      */
     const TickCheckbox: (props: CheckboxProps) => React.ReactElement;
+
+    /**
+     * A checkbox like a switch (another design)
+     */
+    const Switch: (props: CheckboxProps) => React.ReactElement;
 }
