@@ -141,6 +141,21 @@ declare namespace MeastUI {
         id?: string,
     }
 
+    type CardProps = React.PropsWithChildren<{
+        /**
+         * The title of the card
+         */
+        title?: string,
+        /**
+         * Classes forwarded to the `className` attribute
+         */
+        className?: string,
+        /**
+         * If the background of the card is lighter than default
+         */
+        lighten?: boolean
+    }>;
+
     /**
      * This is the default button.
      */
@@ -170,4 +185,9 @@ declare namespace MeastUI {
      * This is the default radio button
      */
     const RadioButton: (props: RadioButtonProps) => React.ReactElement;
+
+    /**
+     * This is the default card
+     */
+    const Card: (props: CardProps) => React.ReactElement;
 }
