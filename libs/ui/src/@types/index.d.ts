@@ -11,6 +11,8 @@ declare namespace MeastUI {
 
     type TextFieldType = 'email' | 'password' | 'number' | 'text' | 'url';
 
+    type MeastSize = 'small' | 'medium' | 'large';
+
     /**
      * Props of the button component
      */
@@ -156,6 +158,25 @@ declare namespace MeastUI {
         lighten?: boolean
     }>;
 
+    type ProgressBarProps = {
+        /**
+         * The percentage of the progress bar (must be between 0 and 100)
+         */
+        percentage: number,
+        /**
+         * If the percentage must be shown on the progress bar
+         */
+        showPercentage?: boolean,
+        /**
+         * Size of the progress bar (default: medium)
+         */
+        size?: MeastSize,
+        /**
+         * The state of the progress bar. It changes its color
+         */
+        state?: MeastInputState
+    };
+
     /**
      * This is the default button.
      */
@@ -190,4 +211,9 @@ declare namespace MeastUI {
      * This is the default card
      */
     const Card: (props: CardProps) => React.ReactElement;
-}
+
+    /**
+     * This is the default progress bar
+     */
+    const ProgressBar: (props: ProgressBarProps) => React.ReactElement;
+} 
