@@ -1,0 +1,22 @@
+{
+  "name": "@meast/core",
+  "version": "0.0.0",
+  "description": "A bunch of tools used for the core of the launcher",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@electron/asar": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "typescript": "^5.1.3",
+    "vitest": "^0.32.2"
+  }
+}
