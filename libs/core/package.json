@@ -5,11 +5,12 @@
   "exports": {
     ".": "./src/index.ts"
   },
+  "typings": "",
   "scripts": {
     "test": "vitest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Command_maker",
   "license": "ISC",
   "dependencies": {
     "@electron/asar": "^3.2.4"
