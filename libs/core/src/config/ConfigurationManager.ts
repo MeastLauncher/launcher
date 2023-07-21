@@ -1,4 +1,4 @@
-import {ConfigurationFile, ParsedConfig} from '@/@types/core';
+import {ConfigurationFile, ParsedConfig} from '@/types';
 import * as fs from 'fs';
 
 export class ConfigurationManager<Namespaces extends string> {
@@ -31,7 +31,7 @@ export class ConfigurationManager<Namespaces extends string> {
      parseConfig (): void {
         this.files.forEach((f, k) => {
             const buffer = fs.readFileSync(f, 'utf8');
-            this.parsedConfig[k] = JSON.parse(buffer.toString());
+            this.parsedConfig[k] = JSON.parse(buffer);
         });
     }
 

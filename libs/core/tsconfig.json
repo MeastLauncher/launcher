@@ -9,6 +9,7 @@
       "baseUrl": "./",
       "esModuleInterop": true,
       "moduleResolution": "node",
+      "module": "ESNext",
       "paths": {
         "@/*": ["src/*"]
       },
@@ -17,7 +18,8 @@
       "allowUnreachableCode": false,
       "noImplicitReturns": true,
       "noUnusedLocals": true,
-      "noUnusedParameters": true
+      "noUnusedParameters": true,
+      "jsx": "react-jsx"
     },
     "include": ["./**/*.ts"],
     "exclude": [
