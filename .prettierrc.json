@@ -5,5 +5,6 @@
   "tabWidth": 4,
   "arrowParens": "avoid",
   "trailingComma": "none",
-  "quoteProps": "as-needed"
+  "quoteProps": "as-needed",
+  "endOfLine": "lf"
 }

@@ -16,10 +16,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
+        "indent": "off",
         "linebreak-style": [
             "error",
             "unix"

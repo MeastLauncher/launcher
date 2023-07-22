@@ -4,7 +4,7 @@
   "main": "dist-electron/main/index.js",
   "description": "Electron Vite React boilerplate.",
   "author": "Command_maker",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "private": true,
   "debug": {
     "env": {

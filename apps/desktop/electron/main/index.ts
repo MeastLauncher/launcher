@@ -1,4 +1,23 @@
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
+/*
+ * Copyright (C) 2023 Meast Team & its contributors
+ *
+ * This file is part of the Meast Launcher.
+ *
+ * Meast is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Meast is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Meast.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+import { app, BrowserWindow, ipcMain, shell } from 'electron';
 import { release } from 'node:os';
 import { join } from 'node:path';
 import { update } from './update';
@@ -15,7 +34,7 @@ import { update } from './update';
 //
 process.env.DIST_ELECTRON = join(__dirname, '../');
 process.env.DIST = join(process.env.DIST_ELECTRON, '../dist');
-process.env.PUBLIC = process.env.VITE_DEV_SERVER_URL
+process.env.PROJECT_PUBLIC = process.env.VITE_DEV_SERVER_URL
     ? join(process.env.DIST_ELECTRON, '../public')
     : process.env.DIST;
 

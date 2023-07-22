@@ -1,3 +1,22 @@
+<!--
+  - Copyright (C) 2023 Meast Team & its contributors
+  -
+  - This file is part of the Meast Launcher.
+  -
+  - Meast is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License as published by
+  - the Free Software Foundation, either version 3 of the License, or
+  - (at your option) any later version.
+  -
+  - Meast is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Meast.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_103_2)">
 <path d="M63.9202 127.84C99.2223 127.84 127.84 99.2223 127.84 63.9202C127.84 28.6181 99.2223 0 63.9202 0C28.6181 0 0 28.6181 0 63.9202C0 99.2223 28.6181 127.84 63.9202 127.84Z" fill="url(#paint0_linear_103_2)"/>

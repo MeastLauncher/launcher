@@ -11,7 +11,7 @@
   },
   "keywords": [],
   "author": "Command_maker",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "decompress": "^4.2.1",
     "rimraf": "^5.0.1"
