@@ -1,9 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { TextField, type TextFieldProps } from '@meast/ui';
 
 const meta = {
     title: 'Atoms/TextField',
-    component: TextField,
+    component: TextField
 } satisfies Meta<typeof TextField>;
 
 export default meta;
@@ -17,9 +17,9 @@ export const Default: Story = {
         placeholder: 'Input placeholder',
         inputType: 'text',
         state: 'default',
-        onChange: e => console.log(e.target.value),
-    } satisfies TextFieldProps,
-}
+        onChange: e => console.log(e.target.value)
+    } satisfies TextFieldProps
+};
 
 export const Success: Story = {
     args: {
@@ -28,20 +28,20 @@ export const Success: Story = {
         placeholder: 'Input placeholder',
         inputType: 'text',
         state: 'success',
-        onChange: e => console.log(e.target.value),
+        onChange: e => console.log(e.target.value)
     } satisfies TextFieldProps
-}
+};
 
 export const Error: Story = {
     args: {
         name: 'input',
-            title: 'An input',
-            placeholder: 'Input placeholder',
-            inputType: 'text',
-            state: 'error',
-            onChange: e => console.log(e.target.value),
+        title: 'An input',
+        placeholder: 'Input placeholder',
+        inputType: 'text',
+        state: 'error',
+        onChange: e => console.log(e.target.value)
     } satisfies TextFieldProps
-}
+};
 
 export const Disabled: Story = {
     args: {
@@ -51,9 +51,9 @@ export const Disabled: Story = {
         inputType: 'text',
         state: 'default',
         disabled: true,
-        onChange: e => console.log(e.target.value),
+        onChange: e => console.log(e.target.value)
     } satisfies TextFieldProps
-}
+};
 
 export const WithLabel: Story = {
     args: {
@@ -63,9 +63,9 @@ export const WithLabel: Story = {
         inputType: 'text',
         state: 'default',
         label: 'Label of the field',
-        onChange: e => console.log(e.target.value),
+        onChange: e => console.log(e.target.value)
     } satisfies TextFieldProps
-}
+};
 
 export const WithIcons: Story = {
     args: {
@@ -76,6 +76,6 @@ export const WithIcons: Story = {
         state: 'default',
         iconLeft: 'fa-solid fa-envelope',
         iconRight: 'fa-solid fa-check',
-        onChange: e => console.log(e.target.value),
+        onChange: e => console.log(e.target.value)
     } satisfies TextFieldProps
-}
+};

@@ -1,9 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { TickCheckbox, CheckboxProps } from '@meast/ui';
+import type { Meta, StoryObj } from '@storybook/react';
+import { TickCheckbox, type CheckboxProps } from '@meast/ui';
 
 const meta = {
     title: 'Atoms/Checkboxes/TickCheckbox',
-    component: TickCheckbox,
+    component: TickCheckbox
 } satisfies Meta<typeof TickCheckbox>;
 
 export default meta;
@@ -16,4 +16,4 @@ export const Default: Story = {
         label: 'A tick checkbox',
         onChange: e => console.log(e.target.checked)
     } satisfies CheckboxProps
-}
+};

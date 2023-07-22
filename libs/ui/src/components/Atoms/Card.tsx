@@ -1,8 +1,14 @@
-import React from 'react';
-import { CardProps } from '../../@types';
+import type { ReactElement } from 'react';
+import type { CardProps } from '../../@types';
 
-export const Card = ({ title, children, className, lighten }: CardProps): React.ReactElement => {
-    return <div className={`card ${className || ''}${lighten ? ' lighten' : ''}`}>
-        {children}
-    </div>
-}
+export const Card = ({
+    children,
+    className,
+    lighten
+}: CardProps): ReactElement => {
+    return (
+        <div className={`card ${className || ''}${lighten ? ' lighten' : ''}`}>
+            {children}
+        </div>
+    );
+};

@@ -1,22 +1,19 @@
-import {existsSync, lstatSync, readFileSync} from 'fs';
-import {checkFileHash, listFilesRecursively} from '@/helpers/files';
-import {join} from 'path';
+import { existsSync, lstatSync, readFileSync } from 'fs';
+import { checkFileHash, listFilesRecursively } from '@/helpers/files';
+import { join } from 'path';
 import decompress from 'decompress';
-import {rimraf} from 'rimraf';
-import type {RouteObject} from 'react-router-dom';
-import {MeastModule} from '@/types';
-import {RedirectToMainModuleRoute} from '@/module/routes/RedirectToMainModuleRoute';
-import {createElement} from 'react';
+import { rimraf } from 'rimraf';
+import type { RouteObject } from 'react-router-dom';
+import type { MeastModule } from '@/types';
+import { RedirectToMainModuleRoute } from '@/module/routes/RedirectToMainModuleRoute';
+import { createElement } from 'react';
 
 export class ModuleLoader {
     private module: MeastModule;
 
-    constructor (
-        private modulePath: string,
-    ) {
-    }
+    constructor(private modulePath: string) {}
 
-    async extractModule (
+    async extractModule(
         zipFile: string,
         deleteBeforeIfExists: boolean = false
     ): Promise<decompress.File[]> {
@@ -30,28 +27,41 @@ export class ModuleLoader {
             });
         }
 
-        return await decompress(zipFile, this.modulePath)
+        return await decompress(zipFile, this.modulePath);
     }
 
-    checkModuleIntegrity (): boolean {
-        if (!existsSync(this.modulePath) && !lstatSync(this.modulePath).isDirectory()) {
-            throw new Error(`The specified path ${this.modulePath} does not exists or is not a directory`);
+    checkModuleIntegrity(): boolean {
+        if (
+            !existsSync(this.modulePath) &&
+            !lstatSync(this.modulePath).isDirectory()
+        ) {
+            throw new Error(
+                `The specified path ${this.modulePath} does not exists or is not a directory`
+            );
         }
 
         const files = listFilesRecursively(this.modulePath);
         if (!existsSync(join(this.modulePath, 'integrity.json'))) {
-            throw new Error(`The specified folder does not contain integrity.json file`);
+            throw new Error(
+                'The specified folder does not contain integrity.json file'
+            );
         }
 
-        const json = JSON.parse(readFileSync(join(this.modulePath, 'integrity.json')).toString());
+        const json = JSON.parse(
+            readFileSync(join(this.modulePath, 'integrity.json')).toString()
+        );
 
-        return !files.filter(f => f !== '/integrity.json').map(f => {
-            return checkFileHash(join(this.modulePath, f), json[f]);
-        }).includes(false);
-
+        return !files
+            .filter(f => f !== '/integrity.json')
+            .map(f => {
+                return checkFileHash(join(this.modulePath, f), json[f]);
+            })
+            .includes(false);
     }
 
-    async runModuleLoadFunction (setMessage: (message: string) => void): Promise<void> {
+    async runModuleLoadFunction(
+        setMessage: (message: string) => void
+    ): Promise<void> {
         if (this.module === undefined) {
             await this.importModule();
         }
@@ -59,7 +69,7 @@ export class ModuleLoader {
         this.module.onModuleLoad(setMessage);
     }
 
-    async runModuleUnloadFunction (): Promise<void> {
+    async runModuleUnloadFunction(): Promise<void> {
         if (this.module === undefined) {
             await this.importModule();
         }
@@ -67,25 +77,37 @@ export class ModuleLoader {
         this.module.onModuleUnload();
     }
 
-    async registerModuleRoutes (routes: RouteObject[]): Promise<RouteObject[]> {
+    async registerModuleRoutes(routes: RouteObject[]): Promise<RouteObject[]> {
         if (this.module === undefined) {
             await this.importModule();
         }
 
         if (routes.some(r => r.path.startsWith(`/${this.module.identifier}`))) {
-            throw new Error(`A module is already registered with the same identifier "${this.module.identifier}"`);
+            throw new Error(
+                `A module is already registered with the same identifier "${this.module.identifier}"`
+            );
         }
 
-        const moduleRouteIdentifier = this.module.identifier.replaceAll('.', '');
+        const moduleRouteIdentifier = this.module.identifier.replaceAll(
+            '.',
+            ''
+        );
 
-        return [...routes, {
-            path: `/module/${moduleRouteIdentifier}`,
-            element: createElement(RedirectToMainModuleRoute, {moduleRouteIdentifier: moduleRouteIdentifier}),
-            children: this.module.routes
-        }] as RouteObject[];
+        return [
+            ...routes,
+            {
+                path: `/module/${moduleRouteIdentifier}`,
+                element: createElement(RedirectToMainModuleRoute, {
+                    moduleRouteIdentifier: moduleRouteIdentifier
+                }),
+                children: this.module.routes
+            }
+        ] as RouteObject[];
     }
 
-    private async importModule (): Promise<void> {
-        this.module = (await import(join(this.modulePath, 'module.mjs'))).default;
+    private async importModule(): Promise<void> {
+        this.module = (
+            await import(join(this.modulePath, 'module.mjs'))
+        ).default;
     }
 }

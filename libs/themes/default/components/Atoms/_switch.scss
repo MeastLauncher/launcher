@@ -1,53 +1,53 @@
 // Checkbox variant : Switch
 //===============
 .switch-container {
-  @extend .checkbox-container;
+    @extend .checkbox-container;
 }
 
 //Background design
 .switch-container .switch-ui {
-  position: relative;
-  height: calc(var(--size) * 1.5);
-  width: calc(var(--size) * 3);
+    position: relative;
+    height: calc(var(--size) * 1.5);
+    width: calc(var(--size) * 3);
 
-  background: var(--state-color);
-  border-radius: calc(var(--size) * 1.5);
+    background: var(--state-color);
+    border-radius: calc(var(--size) * 1.5);
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 //Check design
 .switch-container .switch-ui::before {
-  content: '';
-  display: block;
-  width: var(--size);
-  height: var(--size);
-  border-radius: calc(var(--size) * (4/3));
-  background: var(--button-text);
-  position: absolute;
-  left: calc(var(--size) * .25);
-  transition: .2s ease-in-out;
+    content: '';
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    border-radius: calc(var(--size) * (4 / 3));
+    background: var(--button-text);
+    position: absolute;
+    left: calc(var(--size) * 0.25);
+    transition: 0.2s ease-in-out;
 }
 
 .switch-container .switch-ui.default-color {
-  --state-color: var(--primary);
+    --state-color: var(--primary);
 }
 
 // When checked
 .switch-container input:checked + .switch-ui::before {
-  left: calc(100% - var(--size) * .25 - var(--size));
+    left: calc(100% - var(--size) * 0.25 - var(--size));
 }
 
 //Disabled design
 .switch-container.switch-disabled {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
 
 .switch-container.switch-disabled .switch-ui::after {
-  content: '';
-  background: var(--input-disabled-2);
-  position: absolute;
-  inset: 0;
-  border-radius: calc(var(--size) * 1.5);
+    content: '';
+    background: var(--input-disabled-2);
+    position: absolute;
+    inset: 0;
+    border-radius: calc(var(--size) * 1.5);
 }

@@ -6,67 +6,67 @@
 // Label
 //===============
 .checkbox-container {
-  font-weight: 500;
+    font-weight: 500;
 
-  display: flex;
-  gap: calc(var(--size) * .75);
-  align-items: center;
+    display: flex;
+    gap: calc(var(--size) * 0.75);
+    align-items: center;
 
-  user-select: none;
-  -webkit-user-select: none;
-  cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
 }
 
 // Check design
 //===============
 .checkbox-container input {
-  display: none;
+    display: none;
 }
 
 .checkbox-container .checkbox-ui {
-  flex-shrink: 0;
-  position: relative;
+    flex-shrink: 0;
+    position: relative;
 
-  width: calc(var(--size) * 1.5);
-  height: calc(var(--size) * 1.5);
+    width: calc(var(--size) * 1.5);
+    height: calc(var(--size) * 1.5);
 
-  border: 2px solid var(--state-color);
-  border-radius: calc(var(--size) * .25);
+    border: 2px solid var(--state-color);
+    border-radius: calc(var(--size) * 0.25);
 }
 
 // Tick design
 //===============
 .checkbox-container .checkbox-ui::before {
-  content: '';
+    content: '';
 
-  display: block;
-  width: 0;
-  height: 0;
+    display: block;
+    width: 0;
+    height: 0;
 
-  background: var(--state-color);
-  position: absolute;
-  top: 50%;
-  left: 50%;
+    background: var(--state-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-  transform: translate(-50%, -50%);
-  transition: .1s ease-in-out;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease-in-out;
 }
 
 .checkbox-container input:checked + .checkbox-ui::before {
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
 }
 
 // Color when the state is default
 .checkbox-container .checkbox-ui.default-color {
-  --state-color: var(--primary);
+    --state-color: var(--primary);
 }
 
 // Disabled style
 .checkbox-container input:disabled + .checkbox-ui {
-  background: var(--input-disabled-2);
+    background: var(--input-disabled-2);
 }
 
 .checkbox-container.checkbox-disabled {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }

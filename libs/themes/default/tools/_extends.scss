@@ -1,23 +1,23 @@
 .success-color {
-  --state-color: var(--success);
-  --input-shadow: var(--success-shadow);
-  --stroke: var(--success);
+    --state-color: var(--success);
+    --input-shadow: var(--success-shadow);
+    --stroke: var(--success);
 }
 
 .error-color {
-  --state-color: var(--error);
-  --input-shadow: var(--error-shadow);
-  --stroke: var(--error);
+    --state-color: var(--error);
+    --input-shadow: var(--error-shadow);
+    --stroke: var(--error);
 }
 
 %default-state-color {
-  --state-color: var(--input-shadow);
+    --state-color: var(--input-shadow);
 }
 
 %success-background {
-  background: var(--success);
+    background: var(--success);
 }
 
 %error-background {
-  background: var(--error);
+    background: var(--error);
 }

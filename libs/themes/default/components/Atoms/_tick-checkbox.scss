@@ -1,57 +1,57 @@
 // Checkbox variant : With tick
 //===============
 .tick-checkbox-container {
-  @extend .checkbox-container;
+    @extend .checkbox-container;
 }
 
 .tick-checkbox-container input {
-  display: none;
+    display: none;
 }
 
 .tick-checkbox-container .checkbox-ui {
-  flex-shrink: 0;
-  position: relative;
+    flex-shrink: 0;
+    position: relative;
 
-  width: calc(var(--size) * 1.5);
-  height: calc(var(--size) * 1.5);
+    width: calc(var(--size) * 1.5);
+    height: calc(var(--size) * 1.5);
 
-  border: 2px solid var(--state-color);
-  border-radius: calc(var(--size) * .25);
+    border: 2px solid var(--state-color);
+    border-radius: calc(var(--size) * 0.25);
 
-  transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 // Color when the state is default
 .tick-checkbox-container .checkbox-ui.default-color {
-  --state-color: var(--primary);
+    --state-color: var(--primary);
 }
 
 // Disabled style
 .tick-checkbox-container input:disabled + .checkbox-ui {
-  background: var(--input-disabled-2);
+    background: var(--input-disabled-2);
 }
 
 .tick-checkbox-container.checkbox-disabled {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
 
 // Tick design
 .tick-checkbox-container .checkbox-ui svg {
-  stroke-linejoin: round;
-  stroke-width: calc(var(--size) * .25);
-  stroke: var(--button-text);
-  width: calc(var(--size) * (4/3));
-  height: calc(var(--size) * (4/3));
-  opacity: 0;
-  transform: rotate(45deg);
-  transition: .2s ease-in-out;
+    stroke-linejoin: round;
+    stroke-width: calc(var(--size) * 0.25);
+    stroke: var(--button-text);
+    width: calc(var(--size) * (4 / 3));
+    height: calc(var(--size) * (4 / 3));
+    opacity: 0;
+    transform: rotate(45deg);
+    transition: 0.2s ease-in-out;
 }
 
 .tick-checkbox-container input:checked + .checkbox-ui svg {
-  transform: rotate(0);
-  opacity: 1;
+    transform: rotate(0);
+    opacity: 1;
 }
 
 .tick-checkbox-container input:checked + .checkbox-ui {
-  background: var(--state-color);
+    background: var(--state-color);
 }

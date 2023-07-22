@@ -1,14 +1,16 @@
 import type { StoryObj } from '@storybook/react';
-import { RadioButton, RadioButtonProps } from '@meast/ui';
+import { RadioButton, type RadioButtonProps } from '@meast/ui';
 
 const meta = {
     title: 'Atoms/RadioButton',
     component: RadioButton,
-    render: args => <div style={{display: 'flex', gap: 'var(--size)'}}>
-        <RadioButton {...args} />
-        <RadioButton {...args} />
-        <RadioButton {...args} />
-    </div>
+    render: args => (
+        <div style={{ display: 'flex', gap: 'var(--size)' }}>
+            <RadioButton {...args} />
+            <RadioButton {...args} />
+            <RadioButton {...args} />
+        </div>
+    )
 };
 
 export default meta;
@@ -21,4 +23,4 @@ export const Default: Story = {
         label: 'Radio Button',
         onChange: e => console.log(e.target.checked)
     } satisfies RadioButtonProps
-}
+};

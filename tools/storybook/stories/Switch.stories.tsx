@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { CheckboxProps, Switch } from '@meast/ui';
+import type { Meta, StoryObj } from '@storybook/react';
+import { type CheckboxProps, Switch } from '@meast/ui';
 
 const meta = {
     title: 'Atoms/Checkboxes/Switch',

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProgressBar, ProgressBarProps } from '@meast/ui';
+import { ProgressBar, type ProgressBarProps } from '@meast/ui';
 
 const meta = {
     title: 'Atoms/ProgressBar',
@@ -12,13 +12,13 @@ type Story = StoryObj<typeof ProgressBar>;
 
 export const Empty: Story = {
     args: {
-        percentage: 0,
+        percentage: 0
     } satisfies ProgressBarProps
 };
 
 export const Default: Story = {
     args: {
-        percentage: 80,
+        percentage: 80
     } satisfies ProgressBarProps
 };
 
@@ -38,7 +38,7 @@ export const Error: Story = {
 
 export const Complete: Story = {
     args: {
-        percentage: 100,
+        percentage: 100
     } satisfies ProgressBarProps
 };
 

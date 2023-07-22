@@ -1,5 +1,5 @@
-import decompress from 'decompress';
-import {RouteObject} from 'react-router-dom';
+import type decompress from 'decompress';
+import type { RouteObject } from 'react-router-dom';
 
 /*
  * Configuration
@@ -8,28 +8,26 @@ import {RouteObject} from 'react-router-dom';
 export declare type ConfigurationFile<T> = {
     path: string;
     namespace: T;
-}
+};
 
 export declare type ParsedConfig<T extends string | number | symbol> = {
     [namespace in T]?: object;
-}
+};
 
 export declare type MeastModule = {
-    name: string,
-    identifier: string,
-    version: string,
-    routes: RouteObject[],
-    onModuleLoad: (setMessage: (message: string) => void) => void,
-    onModuleUnload: () => void
-}
+    name: string;
+    identifier: string;
+    version: string;
+    routes: RouteObject[];
+    onModuleLoad: (setMessage: (message: string) => void) => void;
+    onModuleUnload: () => void;
+};
 
 /**
  * This class is used to manage the configuration of the launcher
  */
 export declare class ConfigurationManager<Namespaces extends string> {
-    constructor (
-        defaultNamespace: Namespaces
-    );
+    constructor(defaultNamespace: Namespaces);
 
     /**
      * Add file to the configuration manager
@@ -38,7 +36,7 @@ export declare class ConfigurationManager<Namespaces extends string> {
      * @param path
      * @param namespace
      */
-    addFile (path: string, namespace: Namespaces): void
+    addFile(path: string, namespace: Namespaces): void;
 
     /**
      * Add multiple files to the configuration manager
@@ -46,7 +44,7 @@ export declare class ConfigurationManager<Namespaces extends string> {
      *
      * @param {string[]} files The files to append
      */
-    addFiles (...files: ConfigurationFile<Namespaces>[]): void
+    addFiles(...files: ConfigurationFile<Namespaces>[]): void;
 
     /**
      * Get a value from the configuration defined in a namespace
@@ -54,12 +52,12 @@ export declare class ConfigurationManager<Namespaces extends string> {
      * @param {string} key The key of the value. Can be nested objects separated with a dot
      * @param namespace The namespace (file) where you want to get the value (default is the namespace defined in the constructor)
      */
-    get<T> (key: string, namespace: Namespaces): T
+    get<T>(key: string, namespace: Namespaces): T;
 
     /**
      * Read configurations files & build the config object
      */
-    parseConfig (): void
+    parseConfig(): void;
 
     /**
      * Set a value in a config namespace
@@ -69,25 +67,26 @@ export declare class ConfigurationManager<Namespaces extends string> {
      * @param {boolean} queue If the config file should be written immediately (if true, call the `flush()` method to write)
      * @param namespace The namespace (file) where you want to set the value (default is the namespace defined in the constructor)
      */
-    set (key: string, value: unknown, queue: boolean, namespace: Namespaces): void
+    set(
+        key: string,
+        value: unknown,
+        queue: boolean,
+        namespace: Namespaces
+    ): void;
 
     /**
      * Write config files
      *
      * @param namespace If present, it will only write file associated to the namespace
      */
-    flush (namespace?: Namespaces[] | Namespaces): void
+    flush(namespace?: Namespaces[] | Namespaces): void;
 }
-
 
 /*
  * Module loading
  */
 export declare class ModuleLoader {
-    constructor (
-        filePath: string,
-        extractPath: string | undefined
-    );
+    constructor(filePath: string, extractPath: string | undefined);
 
     /**
      * Extract the given module to a directory
@@ -97,7 +96,7 @@ export declare class ModuleLoader {
      * @param onError a function called when error occurred
      * @param deleteBeforeIfExists If the folder needs to be deleted before extraction if exists
      */
-    extractModule (
+    extractModule(
         extractPath: string,
         onFinish: (files: decompress.File[]) => void,
         onError: (error: Error) => void,
@@ -107,24 +106,24 @@ export declare class ModuleLoader {
     /**
      * Check if the extracted modules files are valid according to its hash in the integrity.json file
      */
-    checkModuleIntegrity (): boolean;
+    checkModuleIntegrity(): boolean;
 
     /**
      * Run the module loading function used to register the electron handler's or any backend code
      *
      * @param setMessage The function to display message on the splash screen
      */
-    runModuleLoadFunction (setMessage: (message: string) => void): Promise<void>;
+    runModuleLoadFunction(setMessage: (message: string) => void): Promise<void>;
 
     /**
      * Run the unload module function
      */
-    runModuleUnloadFunction (): Promise<void>;
+    runModuleUnloadFunction(): Promise<void>;
 
     /**
      * Register the routes used to navigate between the screens of the module (react-router-dom)
      */
-    registerModuleRoutes (routes: RouteObject[]): Promise<RouteObject[]>;
+    registerModuleRoutes(routes: RouteObject[]): Promise<RouteObject[]>;
 }
 
 /*
@@ -134,7 +133,10 @@ export declare class ModuleLoader {
 /**
  * List all files recursively in a folder
  */
-export declare const listFilesRecursively: (dirPath, arrayOfFiles: string[]) => string[];
+export declare const listFilesRecursively: (
+    dirPath,
+    arrayOfFiles: string[]
+) => string[];
 
 /**
  * Create the SHA-256 hash of a file

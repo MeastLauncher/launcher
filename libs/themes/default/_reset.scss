@@ -5,11 +5,11 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
+    background: var(--background);
 }
 
 html,
@@ -93,13 +93,13 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: var(--size);
-  font-family: var(--primary-font-family);
-  color: var(--text);
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: var(--size);
+    font-family: var(--primary-font-family);
+    color: var(--text);
+    vertical-align: baseline;
 }
 
 h1,
@@ -108,34 +108,34 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: calc(2 * var(--size));
-  font-family: var(--title-font-family);
-  font-weight: 800;
+    font-size: calc(2 * var(--size));
+    font-family: var(--title-font-family);
+    font-weight: 800;
 }
 
 button {
-  color: inherit;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  background: transparent;
-  font-size: inherit;
-  font-family: inherit;
-  outline: 0;
+    color: inherit;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    font-size: inherit;
+    font-family: inherit;
+    outline: 0;
 }
 
 form {
-  display: block;
+    display: block;
 }
 
 select,
 input {
-  font-size: inherit;
-  font-family: inherit;
+    font-size: inherit;
+    font-family: inherit;
 }
 
 pre {
-  font-family: monospace;
+    font-family: monospace;
 }
 
 // HTML5 display-role reset for older browsers
@@ -150,60 +150,60 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 
 body {
-  line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+    content: '';
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
 }
 
 textarea {
-  font-size: inherit;
-  font-family: inherit;
-  line-height: inherit;
-  resize: none;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    resize: none;
 }
 
 hr {
-  height: 1px;
-  background: var(--border);
-  margin: 0;
-  padding: 0;
-  border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 *:focus:not(:focus-visible) {
-  outline: none;
+    outline: none;
 }

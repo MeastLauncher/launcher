@@ -3,12 +3,12 @@
  * See the `Card` component in the ui package
  */
 .card {
-  background: var(--background);
-  border-radius: var(--size);
-  box-shadow: 0 0 15px 2px var(--card-shadow);
-  padding: 30px 35px;
+    background: var(--background);
+    border-radius: var(--size);
+    box-shadow: 0 0 15px 2px var(--card-shadow);
+    padding: 30px 35px;
 
-  &.lighten {
-    background: var(--background-lighten);
-  }
+    &.lighten {
+        background: var(--background-lighten);
+    }
 }
